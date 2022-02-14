@@ -1,0 +1,90 @@
+" Vim configuration file.
+
+source $VIMRUNTIME/defaults.vim
+set t_Co=256
+
+
+" Vundle initialize
+set nocompatible
+
+set rtp+=~/.vim/bundle/Vundle.vim
+
+" Plugin initialization, add any plugins inbetween vundle begin and end.
+call vundle#begin()
+
+" Vundle init
+Plugin 'VundleVim/Vundle.vim'
+
+" Airline init (Cool status bar)
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+" Theme init
+Plugin 'pop-punk/pop-punk.vim'
+
+
+
+call vundle#end()
+
+" I don't know why this didn't work, but it apparently needs to use the let
+" thing and not colorscheme. Yes it hurt. No I don't understand why that was
+" necessary. Regardless, all of this is for pop-punk configuration.
+let g:colors_name = 'pop-punk'
+
+let g:terminal_ansi_colors = pop_punk#AnsiColors()
+
+let g:airline_theme = 'pop_punk'
+
+let g:airline_section_c = '>> %F'
+
+
+" File configurations
+filetype on
+filetype plugin on
+filetype indent on
+
+
+" Syntax & theme
+syntax on
+set number
+set relativenumber
+set nowrap
+set encoding=utf-8
+set title
+set mouse=a
+set visualbell
+set noerrorbells
+set ruler
+
+
+
+" Shift width
+set shiftwidth=4
+
+" Tab settings
+set tabstop=4
+set expandtab
+set autoindent
+
+" Search settings
+set incsearch
+set ignorecase
+set smartcase
+set showmatch
+set hlsearch
+
+" Command settings
+set showcmd
+set showmode
+set history=1000
+set confirm
+
+" Auto completion
+set wildmenu
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+" This allows project specific configurations by adding the local directory to
+" the vimrc path.
+set exrc
+set secure
+
